@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HorseGG</title>
+    <link rel="shortcut icon" href="images/horsegg.png"> <!--파비콘-->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="../horsegg/js/js.js"></script>
+    <script>let onoff=false;</script>
+</head>
+<body>
+    <!-- 건너뛰기 링크 영역 시작 -->
+    <div id="skipNav">
+        <a id="skipNav1" href="mainMenu">전체 메뉴로 가기</a>
+        <a id="skipNav2" href="contentsArea">컨텐츠로 가기</a>
+        <a id="skipNav4" href="footer">사이트 정보로 가기</a>
+    </div>
+    <!-- 건너뛰기 링크 영역 종료 -->
+
+    <!-- wrapper 영역 시작 -->
+    <div id="wrapper">
+        <!-- 정수리 영역 시작 -->
+        <div id="topHead">
+            <section class="login">
+                <a href="#"><h2>로그인</h2></a>
+            </section>
+            <section class="FAQ">
+                <a href="#"><h2>FAQ</h2></a>
+            </section>
+            <section class="lightMode">
+                <a href="#" id="lightdark" onclick="lightMode();"><img src="images/lightmode.png" alt="라이트모드" width="25" height="25"></a>
+            </section>
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="HorseGG" width="100" height="25">
+                </a>
+                <a href="https://www.kra.co.kr/main.do" class="horseCompany" target="_blank">
+                    <img src="images/masalogo2.webp" alt="마사회" width="100" height="25">
+                </a>
+            </h1>
+        </div>
+        <!-- 정수리 영역 종료 -->
+        <!-- 헤더 영역 시작(1.로고 2.마이페이지 3.메인(+서브)) -->
+        <div id="headerBackground">
+            <header id="header">
+                <a href="#" class="myPageArea">
+                    <ul class="myPage">
+                        <li><a href="#">마이페이지</a></li>
+                    </ul>
+                    <div class="myPageIcon">
+                        <img src="images/mypageIcon.png" alt="myPageIcon">
+                    </div>
+                </a>
+                <nav>
+                    <h2 class="hidden">메인메뉴</h2>
+                    <ul class="mainMenu">
+                        <li><a href="#" >경주마 분석</a>
+                            <ul>
+                                <li><a href="#">선행마</a></li>
+                                <li><a href="#">선입마</a></li>
+                                <li><a href="#">추입마</a></li>
+                            </ul>
+                        </li>
+
+                        <li><a href="#">금주의 경마</a>
+                            <ul>
+                                <li><a href="#">출전정보</a></li>
+                                <li><a href="#">출전표변경</a></li>
+                                <li><a href="#">요약성적표</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">경주성적</a>
+                            <ul>
+                                <li><a href="#">전체성적</a></li>
+                                <li><a href="#">서울경마</a></li>
+                                <li><a href="#">제주경마</a></li>
+                                <li><a href="#">부산경남경마</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">기수랭킹</a></li>
+
+                        <li><a href="">커뮤니티</a></li>
+
+                        <li class="lastMenu"><a href="">모의베팅</a></li>         
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <!-- 헤더 영역 종료 -->
+        
+        <!-- 공지사항 영역 시작. header에 relative주고 공지사항은 absolute..?-->
+        <div class="notification">
+            <div id="notificationArea">
+                <div class="notificationText">
+                    <a href="https://www.kcgp.or.kr/pcMain.do" target="_blank" rel="noopener noreferrer">📢도박중독은 과도한 베팅(10만원 초과)에서 출발합니다. 도박 문제 상담은 1336 [클릭]💥</a>
+                </div>
+                <button class="buttonNotification" type="menu">
+                    <span class="closeIcon">
+                        <img src="images/noticebtn.png" alt="닫기버튼">
+                    </span>
+                </button>
+            </div>
+        </div>
+        <!-- 공지사항 영역 종료-->
+        
+        <!-- 콘텐츠 영역 시작(2-1 비주얼, 2-2 검색창, 2-3 하이라이트, 2-4 뉴스(기사+영상)) -->
+        <div id="contentsArea">
+            <!-- 비주얼 영역 시작  -->
+            <div id="visual">
+                <figure id="bannerImage">
+                    <img src="images/visual1.png" alt="배너이미지" width="800px">
+                </figure>
+            </div>
+            <!-- 비주얼 영역 종료-->
+            <!--검색창 영역 시작 https://ts2ree.tistory.com/122-->
+            <section class="search">
+                <form class="search-box" action="search.jsp" method="get">  
+                    <div class="search-wrapper">
+                        <label for="searchHorse">검색</label>
+                        <input class="search-txt" type="text" name="search" autocomplete="off" placeholder="경주마를 검색하세요">
+                    </div>
+                    <button class="search-btn" type="submit">
+                        .GG
+                    </button>
+                </form>
+            </section>
+            <!--검색창 영역 종료-->
+            <!--오늘의 경마 영역 시작-->
+            <div id="raceSchedule">
+                <div>
+                    <h2>
+                        <p>오늘의 경마</p>
+                        <span>2024년 4월 14일</span>
+                        <p class="ex">
+                            <img src="images/Brace.png" alt="발매경주">
+                            발매경주
+                        </p>
+                    </h2>
+                </div>
+                <div class="raceScheduleBox">
+                    <!--1-->
+                    <div class="raceTable1" style="width: 450px; height: 300px;">
+                        <table class="raceTableFirst">
+                            <caption class="hidden">금일경주의 경주현황을 발매경주, 지역, 경주번호, 경주구분, 거리, 출전, 출발시간, 동영상 순으로 제공하는 표</caption>
+                            <colgroup>
+                                <col style="width: 55px;">
+                                <col style="width: 43px;">
+                                <col style="width: 52px;">
+                                <col style="width: 58px;">
+                                <col style="width: 49px;">
+                                <col style="width: 43px;">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th scope="col">발매경주</th>
+                                    <th scope="col">지역</th>
+                                    <th scope="col">경주번호</th>
+                                    <th scope="col">경주구분</th>
+                                    <th scope="col">거리</th>
+                                    <th scope="col">출전</th>
+                                    <th scope="col">출발시간</th>
+                                    <th scope="col">동영상</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">1R</a>
+                                    </td>
+                                    <td>일반</td>
+                                    <td>1400m</td>
+                                    <td>10두</td>
+                                    <td>10:35</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">2R</a>
+                                    </td>
+                                    <td>일반</td>
+                                    <td>1200m</td>
+                                    <td>11두</td>
+                                    <td>11:00</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">3R</a>
+                                    </td>
+                                    <td>일반</td>
+                                    <td>1300m</td>
+                                    <td>11두</td>
+                                    <td>12:05</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">4R</a>
+                                    </td>
+                                    <td>일반</td>
+                                    <td>1400m</td>
+                                    <td>8두</td>
+                                    <td>13:10</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">5R</a>
+                                    </td>
+                                    <td>일반</td>
+                                    <td>1400m</td>
+                                    <td>8두</td>
+                                    <td>14:00</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">6R</a>
+                                    </td>
+                                    <td>특별</td>
+                                    <td>1600m</td>
+                                    <td>10두</td>
+                                    <td>14:50</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">7R</a>
+                                    </td>
+                                    <td>대상</td>
+                                    <td>1200m</td>
+                                    <td>16두</td>
+                                    <td>15:40</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">8R</a>
+                                    </td>
+                                    <td>특별</td>
+                                    <td>1200m</td>
+                                    <td>14두</td>
+                                    <td>16:30</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">9R</a>
+                                    </td>
+                                    <td>특별</td>
+                                    <td>1800m</td>
+                                    <td>9두</td>
+                                    <td>17:00</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">10R</a>
+                                    </td>
+                                    <td>일반</td>
+                                    <td>1400m</td>
+                                    <td>10두</td>
+                                    <td>17:30</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="images/BraceRed.png" alt="발매경주">
+                                    </td>
+                                    <td class="markBlue"> 서울</td>
+                                    <td>
+                                        <a href="#" title="출전상세정보로 이동">11R</a>
+                                    </td>
+                                    <td>일반</td>
+                                    <td>1300m</td>
+                                    <td>10두</td>
+                                    <td>18:00</td>
+                                    <td>
+                                        <a href="#" onclick="video()">
+                                            <img src="images/playIcon.png" alt="비디오">
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                        <!--//1-->
+
+                        <!--2-->
+                        <div class="raceTable2" style="width: 450px; height: 300px;">
+                            <table class="raceTableSecond">
+                                <caption class="hidden">금일경주의 경주현황을 발매경주, 지역, 경주번호, 경주구분, 거리, 출전, 출발시간, 동영상 순으로 제공하는 표</caption>
+                                <colgroup>
+                                    <col style="width: 55px;">
+                                    <col style="width: 43px;">
+                                    <col style="width: 52px;">
+                                    <col style="width: 58px;">
+                                    <col style="width: 49px;">
+                                    <col style="width: 43px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">발매경주</th>
+                                        <th scope="col">지역</th>
+                                        <th scope="col">경주번호</th>
+                                        <th scope="col">경주구분</th>
+                                        <th scope="col">거리</th>
+                                        <th scope="col">출전</th>
+                                        <th scope="col">출발시간</th>
+                                        <th scope="col">동영상</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <img src="images/BraceRed.png" alt="발매경주">
+                                        </td>
+                                        <td class="markGreen"> 부경</td>
+                                        <td>
+                                            <a href="#" title="출전상세정보로 이동">1R</a>
+                                        </td>
+                                        <td>일반</td>
+                                        <td>1400m</td>
+                                        <td>12두</td>
+                                        <td>11:25</td>
+                                        <td>
+                                            <a href="#" onclick="video()">
+                                                <img src="images/playIcon.png" alt="비디오">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/BraceRed.png" alt="발매경주">
+                                        </td>
+                                        <td class="markGreen"> 부경</td>
+                                        <td>
+                                            <a href="#" title="출전상세정보로 이동">2R</a>
+                                        </td>
+                                        <td>일반</td>
+                                        <td>1300m</td>
+                                        <td>12두</td>
+                                        <td>12:45</td>
+                                        <td>
+                                            <a href="#" onclick="video()">
+                                                <img src="images/playIcon.png" alt="비디오">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/BraceRed.png" alt="발매경주">
+                                        </td>
+                                        <td class="markGreen"> 부경</td>
+                                        <td>
+                                            <a href="#" title="출전상세정보로 이동">3R</a>
+                                        </td>
+                                        <td>특별</td>
+                                        <td>1400m</td>
+                                        <td>12두</td>
+                                        <td>13:35</td>
+                                        <td>
+                                            <a href="#" onclick="video()">
+                                                <img src="images/playIcon.png" alt="비디오">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/BraceRed.png" alt="발매경주">
+                                        </td>
+                                        <td class="markGreen"> 부경</td>
+                                        <td>
+                                            <a href="#" title="출전상세정보로 이동">4R</a>
+                                        </td>
+                                        <td>특별</td>
+                                        <td>1600m</td>
+                                        <td>10두</td>
+                                        <td>14:25</td>
+                                        <td>
+                                            <a href="#" onclick="video()">
+                                                <img src="images/playIcon.png" alt="비디오">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/BraceRed.png" alt="발매경주">
+                                        </td>
+                                        <td class="markGreen"> 부경</td>
+                                        <td>
+                                            <a href="#" title="출전상세정보로 이동">5R</a>
+                                        </td>
+                                        <td>특별</td>
+                                        <td>1800m</td>
+                                        <td>9두</td>
+                                        <td>15:15</td>
+                                        <td>
+                                            <a href="#" onclick="video()">
+                                                <img src="images/playIcon.png" alt="비디오">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <img src="images/BraceRed.png" alt="발매경주">
+                                        </td>
+                                        <td class="markGreen"> 부경</td>
+                                        <td>
+                                            <a href="#" title="출전상세정보로 이동">6R</a>
+                                        </td>
+                                        <td>일반</td>
+                                        <td>1800m</td>
+                                        <td>12두</td>
+                                        <td>16:05</td>
+                                        <td>
+                                            <a href="#" onclick="video()">
+                                                <img src="images/playIcon.png" alt="비디오">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>    
+                        </div>
+                        <!--//2-->
+                    </div>
+            </div>
+            <!--오늘의 경마 영역 종료-->
+
+            <!--뉴스(기사+영상) 영역 시작. 영상은 네개정도..-->
+            <div id="news">
+                <section class="article">
+                    <h2>
+                        <a target="#" rel="noreferrer" href="#">경마.GG 인기 기사</a>
+                    </h2>
+                    <div class="articleTitle">
+                        <article class="article1">
+                            <a href="https://wordpress.kimtaku.com/archives/33267" target="_blank">
+                                <div class="articleNumber">1</div>
+                                <div class="articleThumbnail">
+                                    <img src="images/article1.png" alt="" width="100px" height="56px">
+                                </div>
+                                <div class="articleText">
+                                    <div class="title">일본 고치경마 낙마사고 츠카모토 기수 사망</div>
+                                    <div class="date">2024-03-25</div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="article1">
+                            <a href="https://wordpress.kimtaku.com/archives/33075" target="_blank">
+                                <div class="articleNumber">2</div>
+                                <div class="articleThumbnail">
+                                    <img src="images/article2.png" alt="" width="100px" height="56px">
+                                </div>
+                                <div class="articleText">
+                                    <div class="title">부경경마장 부산일보배(G3) 라온더포인트 대상경주 첫제패</div>
+                                    <div class="date">2024-03-10</div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="article1">
+                            <a href="https://wordpress.kimtaku.com/archives/33182" target="_blank">
+                                <div class="articleNumber">3</div>
+                                <div class="articleThumbnail">
+                                    <img src="images/article3.png" alt="" width="100px" height="56px">
+                                </div>
+                                <div class="articleText">
+                                    <div class="title">두바이월드컵 데이 두듀스, 리버티 아일랜드 등 일본마 23두 원정</div>
+                                    <div class="date">2024-03-18</div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="article1">
+                            <a href="https://wordpress.kimtaku.com/archives/32998" target="_blank">
+                                <div class="articleNumber">4</div>
+                                <div class="articleThumbnail">
+                                    <img src="images/article4.png" alt="" width="100px" height="56px">
+                                </div>
+                                <div class="articleText">
+                                    <div class="title">서울경마장 우마포이 연승! 일본인 마주, 코리안 더비 출전 기대감</div>
+                                    <div class="date">2024-03-02</div>
+                                </div>
+                            </a>
+                        </article>
+                        <article class="article1">
+                            <a href="https://wordpress.kimtaku.com/archives/33022" target="_blank">
+                                <div class="articleNumber">5</div>
+                                <div class="articleThumbnail">
+                                    <img src="images/article5.png" alt="" width="100px" height="56px">
+                                </div>
+                                <div class="articleText">
+                                    <div class="title">일본경마 JRA 최초 여성 아나운서 후지와라 나나카 장내 실황</div>
+                                    <div class="date">2024-03-03</div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="youtube">
+                    <h2>
+                        <a target="#" rel="noreferrer" href="#">경마.GG 추천 영상</a>
+                    </h2>
+                    <div class="youtubeTitle">
+                        <div class="youtube1">
+                            <figure>
+                                <a href="https://www.youtube.com/watch?v=pQ-9iSBcmKA" target="_blank">
+                                    <div class="youtubeThumbnail">
+                                        <img src="images/thumbnail1.png" alt="유튜브1" width="225px" height="127px">
+                                    </div>
+                                </a>
+                            <figcaption>꼴찌에서 1등까지, <span>라라케이!</span></figcaption>
+                            </figure>
+                            <figure>
+                                <a href="https://www.youtube.com/watch?v=wPmss2EpPEI" target="_blank">
+                                    <div class="youtubeThumbnail">
+                                        <img src="images/thumbnail3.png" alt="유튜브3" width="225px" height="127px">
+                                    </div>
+                                </a>
+                            <figcaption>KRA컵마일 우승 <span>'석세스백파'</span></figcaption>
+                            </figure>
+                        </div>
+                        <div class="youtube2">
+                            <figure>
+                                <a href="https://www.youtube.com/watch?v=8UZWF2gNFbA" target="_blank">
+                                    <div class="youtubeThumbnail">
+                                        <img src="images/thumbnail2.png" alt="유튜브2" width="225px" height="127px">
+                                    </div>
+                                </a>
+                            <figcaption>무패의 경주마, <span>라온더파이터!</span></figcaption>
+                            </figure>
+                            <figure>
+                                <a href="https://www.youtube.com/watch?v=pQ-9iSBcmKA" target="_blank">
+                                    <div class="youtubeThumbnail">
+                                        <img src="images/thumbnail4.png" alt="유튜브4" width="225px" height="127px">
+                                    </div>
+                                </a>
+                            <figcaption>2024 헤럴드 경제배</figcaption>
+                            </figure>
+                            <!--
+                            <div class="etc">
+
+                            </div>
+                            -->
+                        </div>
+                        <div class="etc"></div>
+                    </div>
+                </section>
+            </div>
+            <!--뉴스(기사+영상) 영역 종료-->
+        </div>
+        <!-- 콘텐츠 영역 종료 -->
+
+        <!-- 푸터 영역 시작 -->
+        <footer id="footer">
+            <div id="footerInner">
+                <a href="#" class="footerLogo">
+                    <img src="images/logo.png" alt="WebCafe" width="130" height="32">
+                </a>
+                <section class="guide">
+                    <ul>
+                        <li><a href="#">회사 소개</a></li>
+                        <li><a href="#">개인정보 보호정책</a></li>
+                        <li><a href="#">이메일 주소 무단 수집환영</a></li>
+                        <li><a href="#">CONTACT US</a></li>
+                        <li><a href="#">SITE MAP</a></li>
+                    </ul>
+                </section>
+                <address>
+                    <span>경기도 과천시 경마공원대로 107</span>
+                    <span>· 전화 : 1566 - 3333</span>
+                    <span>· E-MAIL : <a href="#">chanwoo6195@naver.com</a></span>
+                </address>
+                <p class="copyright">Copyright since &copy; 2010 by Web WebCafe CORPORATION ALL RIGHTS RESERVED</p>
+            </div>
+        </footer>
+        <!-- 푸터 영역 종료 -->
+    <!-- wrapper 영역 종료 -->
+    </div>
+</body>
+</html>
